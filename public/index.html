@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendientes del Semestre</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <span class="badge">Bases de Datos · Express + MongoDB</span>
+      <h1>Pendientes del Semestre</h1>
+      <p>Organiza tus actividades y guárdalas en tu base de datos.</p>
+    </header>
+
+    <section class="card">
+      <h2 class="card-title">Nueva actividad</h2>
+      <form id="task-form" autocomplete="off">
+        <input id="title" type="text" placeholder="¿Qué necesitas hacer?" required />
+        <textarea id="description" rows="2" placeholder="Notas adicionales (opcional)"></textarea>
+        <button type="submit" id="submit-btn">＋ Guardar actividad</button>
+      </form>
+    </section>
+
+    <section class="progress-card">
+      <div class="progress-info">
+        <span id="progress-text">0 de 0 completadas</span>
+        <span id="progress-pct">0%</span>
+      </div>
+      <div class="progress-bar"><div id="progress-fill"></div></div>
+    </section>
+
+    <nav class="filters">
+      <button class="filter active" data-filter="all">Todas</button>
+      <button class="filter" data-filter="pending">Por hacer</button>
+      <button class="filter" data-filter="done">Terminadas</button>
+    </nav>
+
+    <p id="message" class="message" hidden></p>
+    <ul id="task-list" class="task-list"></ul>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
